@@ -1,0 +1,21 @@
+<div *ngIf="game" class="">
+  <img class="w-full" src="{{ game.thumbnail }}" alt="{{ game.title }}" />
+  <div class="mt-4 text-white">
+    <h1 class="font-bold text-xl mb-4">{{ game.title }}</h1>
+    <p class="italic text-sm mb-2">
+      {{ game.short_description }}
+    </p>
+    <p class="text-light">
+      <span class="font-bold">Genre:</span> {{ game.genre }}
+    </p>
+    <p class="text-light">
+      <span class="font-bold">Platform:</span> {{ game.platform }}
+    </p>
+    <a
+      class="italic font-sm underline"
+      href="{{ game.game_url }}"
+      target="_blank"
+      >URL</a
+    >
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="max-w-xl">
+    <div class="flex space-x-1 items-center mb-2">
+      <p class="text-white text-lg font-semibold">Ingresa una categoría</p>
+    </div>
+    <div class="flex space-x-4">
+      <div class="flex rounded-md overflow-hidden w-full">
+        <input
+          name="search"
+          type="text"
+          class="w-full rounded-md rounded-r-none px-4"
+          [(ngModel)]="search"
+        />
+        <button
+          class="bg-indigo-600 text-white px-6 text-lg font-semibold py-4 rounded-r-md w-32"
+        >
+          <app-loader *ngIf="loading"></app-loader>
+          <span *ngIf="!loading">Buscar</span>
+        </button>
+      </div>
+    </div>
+    <div *ngIf="error" class="flex space-x-1 items-center py-8 sm:py-16">
+      <p class="text-red-500 text-lg font-semibold">{{ error }}</p>
+    </div>
+  </div>
+</form>
